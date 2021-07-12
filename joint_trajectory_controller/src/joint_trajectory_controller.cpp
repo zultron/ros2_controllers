@@ -1101,14 +1101,14 @@ bool JointTrajectoryController::validate_trajectory_msg(
     {
       trajectory_end_time += p.time_from_start;
     }
-    if (trajectory_end_time < node_->now())
-    {
-      RCLCPP_ERROR(
-        node_->get_logger(),
-        "Received trajectory with non zero time start time (%f) that ends on the past (%f)",
-        trajectory_start_time.seconds(), trajectory_end_time.seconds());
-      return false;
-    }
+    // if (trajectory_end_time < node_->now())
+    // {
+    //   RCLCPP_ERROR(
+    //     node_->get_logger(),
+    //     "Received trajectory with non zero time start time (%f) that ends on the past (%f)",
+    //     trajectory_start_time.seconds(), trajectory_end_time.seconds());
+    //   return false;
+    // }
   }
 
   for (auto i = 0ul; i < trajectory.joint_names.size(); ++i)
