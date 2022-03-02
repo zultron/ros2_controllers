@@ -2,11 +2,6 @@ name: Test ros2_controllers
 on:
   pull_request:
   push:
-    branches:
-      - foxy
-  schedule:
-    # Run every morning to detect flakiness and broken dependencies
-    - cron: '17 8 * * *'
 
 jobs:
   ci_binary:
